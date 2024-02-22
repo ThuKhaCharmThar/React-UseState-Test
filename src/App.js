@@ -1,25 +1,33 @@
-import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
 
 function App() {
+  let [fruit,setFruit]=useState('Orange');
+  let [count,setCount]=useState(0);
+  
+  let changeFruit=()=>{
+    setFruit('Apple');
+  }
+
+  let changeCount=()=>{
+    setCount((prevCount)=>prevCount+1);
+    setCount((prevCount)=>prevCount+1);
+    setCount((prevCount)=>prevCount+1);
+  }
   return (
+    <div>
+      <div className="App">
+     <h5>{fruit}</h5>
+     <button onClick={changeFruit}>Change Fruit 
+     </button>
+    </div>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     <h5>{count}</h5>
+     <button onClick={changeCount}>increase
+     </button>
+    </div>
+    
     </div>
   );
 }
-
 export default App;
